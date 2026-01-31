@@ -7,6 +7,9 @@ React Code to get:
 </div>     
 */
 
+
+// React.createElement(object) => while rendering it converts into HTML(that browser understands)
+
 const parent=React.createElement(
 "div",
 {id:"parent"},
@@ -19,6 +22,6 @@ React.createElement(
 
 console.log(parent);           //returns an object
 
-const root=ReactDOM.createRoot(document.getElementById("root"));
+const root=ReactDOM.createRoot(document.getElementById("root2"));
 
 root.render(parent);
