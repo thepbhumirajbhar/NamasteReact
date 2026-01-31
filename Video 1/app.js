@@ -7,3 +7,6 @@ console.log(heading)    //returns an object
 
 const reactRoot=ReactDOM.createRoot(document.getElementById("root"));
 reactRoot.render(heading); 
+
+
+
