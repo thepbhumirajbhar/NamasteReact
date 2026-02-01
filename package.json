@@ -20,9 +20,10 @@
   "author": "bhumi",
   "type": "commonjs",
   "scripts": {
-    "start":"parcel \"Video 1/index.html\"",
-    "build":"parcel build \"Video 1/index.html\"",
-    "start3":"parcel \"Video 3/index.html\"",
+    "start": "parcel \"Video 1/index.html\"",
+    "build": "parcel build \"Video 1/index.html\"",
+    "start3": "parcel \"Video 3/index.html\"",
+    "start4": "parcel \"Video 4/index.html\"",
     "test": "jest"
   },
   "devDependencies": {
