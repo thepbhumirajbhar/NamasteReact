@@ -22,6 +22,7 @@ root.render(heading);
 /* 
 * JS engine does not understand code in JSX---> parcel/@babel (transpile the code b4 it reaches JS Engine)
 ************
+* JSX is not React.
 * JSX => react.createElement (transpiled into react element)
 * react.createElement => React element(makes a JS object)
 * after rendering JS object => HTML element 
