@@ -11,6 +11,10 @@ const heading=(
 
 
 const Heading= ()=>{
-  return <h1>Functional Component</h1>
-}
+  return(
+    <div>
+      <h1>Functional Component</h1>
+    </div>
+  ) 
+};
 
