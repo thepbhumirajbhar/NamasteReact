@@ -45,7 +45,7 @@ root2.render(jsxHeading);
 //* FUNCTIONAL COMPONENT: function that returns some sort of jsx
 const HeadingComponent= () => (                                        //use () agar return nhi likhna ho instead of {}
   <div id="container">
-     <h1>Functional component starts with a Capital letter</h1>;
+     <h1>Functional component starts with a Capital letter</h1>
   </div>                                     
   
 );
@@ -53,3 +53,28 @@ const HeadingComponent= () => (                                        //use () 
 const root3=ReactDOM.createRoot(document.getElementById("root3"));
 
 root3.render(<HeadingComponent />);
+
+
+//------------------------------------------------------------------------------------------------------------
+
+
+// //4. Component Composition
+
+const Heading1= ()=>(
+  <h1>
+    This is added to heading2 via component Composition
+  </h1>
+);
+
+const Heading2= ()=>(
+  <div>
+    <Heading1 />
+    <h1>
+     Heading 2
+    </h1>
+  </div>
+)
+
+const root4=ReactDOM.createRoot(document.getElementById("root4"))
+
+root4.render(<Heading2 />);
