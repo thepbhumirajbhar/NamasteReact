@@ -38,7 +38,7 @@
 }
 
 .res-card:hover{
-  border: 1px solid black ;
+  border: 2px solid rgb(216, 7, 7) ;
   cursor: pointer;
   box-shadow: 2px;
 }

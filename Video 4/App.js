@@ -28,18 +28,18 @@ const Header=() =>{
 }
 
 const Styling= {
-  backgroundColor:"#bdb9b9"
+  backgroundColor:"rgb(243 217 217)"
 }
 
-const RestaurantCard= () =>{
+const RestaurantCard= (props) =>{                             {/* (or) const RestaurantCard = ({resName,cuisine}) */}
   return(
     <div className="res-card" style={Styling}>
       <img 
       className="res-logo"
       alt="res-logo" 
       src="https://www.shutterstock.com/image-photo/traditional-chicken-biryani-served-brass-600nw-2622739739.jpg"/>
-      <h3>Meghna Foods</h3>
-      <h5>North-Indian</h5>
+      <h3>{props.resName}</h3>                                 {/* (or) <h3> {res.Name} </h3> */}
+      <h5>{props.cuisine}</h5>                                 {/* (or) <h3> {cuisine} </h3> */}
       <h5>4.4</h5>
       <h5>38 mins</h5>
     </div>
@@ -54,14 +54,13 @@ const Body= () =>{
         <div className="search">Search</div>
 
         <div className="res-container">
-           <RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard /><RestaurantCard />
+           <RestaurantCard resName="Meghna Foods" cuisine="North Indian" />
+           <RestaurantCard resName="KFC" cuisine="Snacks, Veg, Non-Veg"/>
         </div>
 
      </div>
   )
 }
-
-
 
 
 
