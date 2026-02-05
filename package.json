@@ -24,6 +24,7 @@
     "build": "parcel build \"Video 1/index.html\"",
     "start3": "parcel \"Video 3/index.html\"",
     "start4": "parcel \"Video 4/index.html\"",
+    "start5": "parcel \"Video 5/index.html\"",
     "test": "jest"
   },
   "devDependencies": {
