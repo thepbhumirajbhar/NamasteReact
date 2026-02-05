@@ -1,106 +1,20 @@
 import RestaurantCard from "./RestaurantCard";
-//import resObj from "../utils/mockData";
+import resObj from "../utils/mockData";
 import { useState } from "react"; 
-
-
-
-
-//*normal JS variable 
-let listOfRestaurant2=[
-  {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
-    "info": {
-      "id": "1026651",
-      "name": "Chinese Wok",
-      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/1/28/a44aaf25-3312-47f1-b028-6a28e9da5513_1026651.jpg",
-      "costForTwo": "₹250 for two",
-      "cuisines": ["Chinese", "Asian", "Tibetan", "Desserts"],
-      "avgRating": 4.2,
-      "sla": {
-        "deliveryTime": 31,
-      }
-    }
-  },
-  {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
-    "info": {
-      "id": "1026652",
-      "name": "MCD",
-      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/1/28/a44aaf25-3312-47f1-b028-6a28e9da5513_1026651.jpg",
-      "costForTwo": "₹250 for two",
-      "cuisines": ["Chinese", "Asian", "Tibetan", "Desserts"],
-      "avgRating": 3.6,
-      "sla": {
-        "deliveryTime": 25,
-      }
-    }
-  },
-  {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
-    "info": {
-      "id": "1026653",
-      "name": "KFC",
-      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/1/28/a44aaf25-3312-47f1-b028-6a28e9da5513_1026651.jpg",
-      "costForTwo": "₹250 for two",
-      "cuisines": ["Chinese", "Asian", "Tibetan", "Desserts"],
-      "avgRating": 4.8,
-      "sla": {
-        "deliveryTime": 25,
-      }
-    }
-  }
-]
 
 
 const Body= () =>{
 /*
-! STATE Variable: Super Powerful Varaible(using HOOKS)
+! local STATE Variable: Super Powerful Varaible(using HOOKS)
 ! (more in README.md)
 */
-  { const [listOfRestaurants, setListOfRestaurants] = useState([
-  {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
-    "info": {
-      "id": "1026651",
-      "name": "Chinese Wok",
-      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/1/28/a44aaf25-3312-47f1-b028-6a28e9da5513_1026651.jpg",
-      "costForTwo": "₹250 for two",
-      "cuisines": ["Chinese", "Asian", "Tibetan", "Desserts"],
-      "avgRating": 4.2,
-      "sla": {
-        "deliveryTime": 31,
-      }
-    }
-  },
-  {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
-    "info": {
-      "id": "1026652",
-      "name": "MCD",
-      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/1/28/a44aaf25-3312-47f1-b028-6a28e9da5513_1026651.jpg",
-      "costForTwo": "₹250 for two",
-      "cuisines": ["Chinese", "Asian", "Tibetan", "Desserts"],
-      "avgRating": 3.6,
-      "sla": {
-        "deliveryTime": 25,
-      }
-    }
-  },
-  {
-    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
-    "info": {
-      "id": "1026653",
-      "name": "KFC",
-      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/1/28/a44aaf25-3312-47f1-b028-6a28e9da5513_1026651.jpg",
-      "costForTwo": "₹250 for two",
-      "cuisines": ["Chinese", "Asian", "Tibetan", "Desserts"],
-      "avgRating": 4.8,
-      "sla": {
-        "deliveryTime": 25,
-      },
-    },
-  },
-])
+  const [listOfRestaurants, setListOfRestaurants] = useState(resObj)
+/*
+! this too shall work: array destructuring 
+* const arr = useState(resObj);
+* const [listOfRestaurants, setListOfRestaurants] = arr;
+*/
+
   return(
       <div className="body">
         <div className="filter">
@@ -126,7 +40,7 @@ const Body= () =>{
      </div>
   )
 }
-}
+
 
 
 export default Body;
