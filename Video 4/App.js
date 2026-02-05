@@ -33,6 +33,8 @@ const Styling= {
 
 const RestaurantCard= (props) =>{                             {/* (or) const RestaurantCard = ({resName,cuisine}) */}
 const {resData} =  props
+const{name, cuisines,ncloudinaryImageId, costForTwo,avgRating, sla:{deliveryTime}}=resData?.info
+
 return(
     <div className="res-card" style={Styling}>
       <img 
@@ -40,11 +42,11 @@ return(
       alt="res-logo" 
       src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + 
       resData.info.cloudinaryImageId }/>
-      <h3>{resData.info.name}</h3>                                     {/* (or) <h3> {res.Name} </h3> */}
-      <h5>{resData.info.cuisines.join(", ")}</h5>                                 
-      <h5>{resData.info.avgRating}</h5>
-      <h5>{resData.info.costForTwo }</h5>
-      <h5>{resData.info.sla.deliveryTime} minutes </h5>
+      <h3>{name}</h3>                                     {/* (or) <h3> {res.Name} </h3> */}
+      <h5>{cuisines.join(", ")}</h5>                                 
+      <h5>{avgRating}</h5>
+      <h5>{costForTwo }</h5>
+      <h5>{deliveryTime} minutes </h5>
     </div>
   )
 }
@@ -71,37 +73,37 @@ const resObj=[
       "parentId": "61955",
       "avgRatingString": "4.2",
       "totalRatingsString": "618",
-    "sla": {
-      "deliveryTime": 31,
-      "lastMileTravel": 5.9,
-      "serviceability": "SERVICEABLE",
-      "slaString": "30-40 mins",
-      "lastMileTravelString": "5.9 km",
-      "iconType": "ICON_TYPE_EMPTY"
-    },
-    "availability": {
-      "nextCloseTime": "2025-10-25 23:00:00",
-      "opened": true
-    },
-    "isOpen": true,
-    "type": "F",
-    "aggregatedDiscountInfoV3": {
-      "header": "ITEMS",
-      "subHeader": "AT ₹119"
-    },
-    "differentiatedUi": {
-      "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-      "differentiatedUiMediaDetails": {
-         "mediaType": "ADS_MEDIA_ENUM_IMAGE"
-      }
-    },
-    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-    "externalRatings": {
-      "aggregatedRating": {
-        "rating": "--"
-      }
-    },
-    "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+      "sla": {
+        "deliveryTime": 31,
+        "lastMileTravel": 5.9,
+        "serviceability": "SERVICEABLE",
+        "slaString": "30-40 mins",
+        "lastMileTravelString": "5.9 km",
+        "iconType": "ICON_TYPE_EMPTY"
+      },
+      "availability": {
+        "nextCloseTime": "2025-10-25 23:00:00",
+        "opened": true
+      },
+      "isOpen": true,
+      "type": "F",
+      "aggregatedDiscountInfoV3": {
+        "header": "ITEMS",
+        "subHeader": "AT ₹119"
+      },
+      "differentiatedUi": {
+        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        "differentiatedUiMediaDetails": {
+          "mediaType": "ADS_MEDIA_ENUM_IMAGE"
+        }
+      },
+      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      "externalRatings": {
+        "aggregatedRating": {
+          "rating": "--"
+        }
+      },
+      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
     },
     "analytics": {
       "context": "seo-data-43bca6b8-5039-46da-935e-cdde9f114a4e"
