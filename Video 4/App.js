@@ -691,14 +691,11 @@ const Body= () =>{
         <div className="search">Search</div>
 
         <div className="res-container">
-           <RestaurantCard resData={resObj[0]}/>                  {/* resObj is the js object and resData is the key that goes as prop in component*/}
-           <RestaurantCard resData={resObj[1]}/>
-           <RestaurantCard resData={resObj[2]}/> 
-           <RestaurantCard resData={resObj[3]}/> 
-           <RestaurantCard resData={resObj[4]}/> 
-           <RestaurantCard resData={resObj[5]}/> 
-           <RestaurantCard resData={resObj[6]}/> 
-           <RestaurantCard resData={resObj[7]}/> 
+           {
+            resObj.map((restaurant) =>(
+              <RestaurantCard resData={restaurant}/>
+            ))
+           }
              
         </div>
 
