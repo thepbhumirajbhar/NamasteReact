@@ -27,7 +27,7 @@ const Header=() =>{
   )
 }
 
-const Styling= {
+const styling= {
   backgroundColor:"rgb(243 217 217)"
 }
 
@@ -36,7 +36,7 @@ const {resData} =  props
 const{name, cuisines,ncloudinaryImageId, costForTwo,avgRating, sla:{deliveryTime}}=resData?.info
 
 return(
-    <div className="res-card" style={Styling}>
+    <div className="res-card" style={styling}>
       <img 
       className="res-logo"
       alt="res-logo" 
@@ -693,9 +693,10 @@ const Body= () =>{
         <div className="res-container">
            {
             resObj.map((restaurant) =>(
-              <RestaurantCard resData={restaurant}/>
+              <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
             ))
            }
+           {/* whenever you are looping, give each element a unique key. why? */}
              
         </div>
 
