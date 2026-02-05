@@ -57,7 +57,7 @@ const Body= () =>{
 ! STATE Variable: Super Powerful Varaible(using HOOKS)
 ! (more in README.md)
 */
-  { const [listOfRestaurants] = useState([
+  { const [listOfRestaurants, setListOfRestaurants] = useState([
   {
     "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
     "info": {
@@ -106,9 +106,10 @@ const Body= () =>{
         <div className="filter">
           <button className="filter-btn" onClick={() => {
              //! filter logic 
-             listOfRestaurants=listOfRestaurants.filter(
+             
+             const filteredList = listOfRestaurants.filter(
                (res) => res.info.avgRating>4); 
-              console.log(listOfRestaurants)
+              setListOfRestaurants(filteredList)
            }}>
             Top Rated Restaurants
           </button>
