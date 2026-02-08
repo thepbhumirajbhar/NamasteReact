@@ -1,0 +1,57 @@
+import RestaurantCard from "./RestaurantCard";
+
+import { useEffect, useState } from "react"; 
+
+
+const Body= () =>{
+/*
+! local STATE Variable: Super Powerful Varaible(using HOOKS)
+! (more in README.md)
+*/
+
+  const [listOfRestaurants, setListOfRestaurants] = useState([])
+
+
+  useEffect(() =>{
+       fetchData();
+  },[]);
+
+  const fetchData = async() => {
+    const data= await fetch("https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING");
+
+    const json=await data.json();
+
+    console.log(json)
+    
+    setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+  }
+
+  return(
+      <div className="body">
+        <div className="filter">
+          <button className="filter-btn" onClick={() => {
+             //! filter logic 
+             const filteredList = listOfRestaurants.filter(
+               (res) => res.info.avgRating>4); 
+              setListOfRestaurants(filteredList)
+           }}>
+            Top Rated Restaurants
+          </button>
+        </div>
+
+        <div className="res-container">
+           {
+            listOfRestaurants.map((restaurant) =>(
+              <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
+            ))
+           }
+           {/* whenever you are looping, give each element a unique key. why? */}
+             
+        </div>
+     </div>
+  )
+}
+
+
+
+export default Body;
