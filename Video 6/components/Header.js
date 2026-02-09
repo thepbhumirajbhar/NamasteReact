@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const Header = () =>{
 
-  let btnName="log-in"
+  const [btnNameReact, setBtnNameReact]=useState("LOG IN")
   
 
   return(
@@ -23,10 +23,10 @@ const Header = () =>{
           <button 
             className="login-logout"
             onClick={() => {
-              btnName="Log-out";
+              setBtnNameReact("Log-out");
             }}
           > 
-            {btnName}
+            {btnNameReact}
           </button>
         </ul>
 
