@@ -23,7 +23,7 @@ const Header = () =>{
           <button 
             className="login-logout"
             onClick={() => {
-              setBtnNameReact("Log-out");
+              btnNameReact==="LOG IN" ? setBtnNameReact("LOG OUT") : setBtnNameReact("LOG IN");
             }}
           > 
             {btnNameReact}
