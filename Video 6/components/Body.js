@@ -12,6 +12,8 @@ const Body= () =>{
   const [listOfRestaurants, setListOfRestaurants] = useState([])
   const [searchText, setSearchText]= useState("");
 
+  const [filteredRes, setFilteredRes]= useState([]);
+
 
   useEffect(() =>{
        fetchData();
@@ -25,6 +27,8 @@ const Body= () =>{
     console.log(json)
     
     setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    //this is done so that main list stays intact. 
+    setFilteredRes(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   }
 
   
@@ -58,7 +62,7 @@ const Body= () =>{
                   (res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase())
                 )
 
-                setListOfRestaurants(filteredRes);
+                setFilteredRes(filteredRes);
               }}
               >
                 Search
@@ -80,8 +84,7 @@ const Body= () =>{
          
 
         <div className="res-container">
-           {
-            listOfRestaurants.map((restaurant) =>(
+           { filteredRes.map((restaurant) =>(
               <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
             ))
            }
