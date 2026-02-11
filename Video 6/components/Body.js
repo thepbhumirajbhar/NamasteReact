@@ -10,6 +10,7 @@ const Body= () =>{
 */
 
   const [listOfRestaurants, setListOfRestaurants] = useState([])
+  const [searchText, setSearchText]= useState("");
 
 
   useEffect(() =>{
@@ -33,20 +34,44 @@ const Body= () =>{
   // }
 
 
-
   return listOfRestaurants.length===0 ? <Shimmer /> 
   :(
       <div className="body">
         <div className="filter">
-          <button className="filter-btn" onClick={() => {
-             //! filter logic 
-             const filteredList = listOfRestaurants.filter(
-               (res) => res.info.avgRating>4); 
-              setListOfRestaurants(filteredList)
-           }}>
+          <div className="search"> 
+            <input 
+              type="text" 
+              className="search-box" 
+              value={searchText}
+              onChange={(e) => {
+                setSearchText(e.target.value)
+              }}/>
+            <button 
+              className="search-btn"
+              onClick={() => {
+                //filter the restaurant cards and update the UI
+                // bind whatever the user inputs to a local state variable using useState and putting that in the value attribute of input.
+                //with any change in the searchbox(while typing), update the searchText with whats been typed, using onChange attribute
+                console.log(searchText)
+              }}
+              >
+                Search
+              </button>
+          </div>
+
+
+          <button 
+            className="filter-btn" onClick={() => {
+              //! filter logic 
+              const filteredList = listOfRestaurants.filter(
+                (res) => res.info.avgRating>4); 
+                setListOfRestaurants(filteredList)
+            }}>
             Top Rated Restaurants
           </button>
         </div>
+
+         
 
         <div className="res-container">
            {
