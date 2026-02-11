@@ -50,9 +50,15 @@ const Body= () =>{
               className="search-btn"
               onClick={() => {
                 //filter the restaurant cards and update the UI
-                // bind whatever the user inputs to a local state variable using useState and putting that in the value attribute of input.
-                //with any change in the searchbox(while typing), update the searchText with whats been typed, using onChange attribute
+                // ! bind whatever the user inputs to a local state variable using useState and putting that in the value attribute of input.
+                // ! with any change in the searchbox(while typing), update the searchText with whats been typed, using onChange attribute
                 console.log(searchText)
+
+                const filteredRes =  listOfRestaurants.filter(
+                  (res)=>res.info.name.includes(searchText)
+                )
+
+                setListOfRestaurants(filteredRes);
               }}
               >
                 Search
