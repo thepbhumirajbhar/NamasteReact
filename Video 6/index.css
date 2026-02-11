@@ -4,6 +4,11 @@
   border: 1px solid brown;
 }
 
+.login-logout{
+  margin-right: 17px;
+  cursor: pointer;
+}
+
 
 
 .logo{
@@ -23,6 +28,12 @@
   margin: 10px;
   padding-top: 2px;
 
+}
+
+.nav-items >ul >li:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  color: brown;
 }
 
 .res-container{
@@ -53,8 +64,12 @@
 
 }
 
-.filter-btn{
-  margin: 10px;
+.filter{
+  display: flex ;
+}
+
+.search-btn, .filter-btn{
+  margin: 5px;
   padding: 5px;
 }
 
