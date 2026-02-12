@@ -26,6 +26,7 @@
     "start4": "parcel \"Video 4/index.html\"",
     "start5": "parcel \"Video 5/index.html\"",
     "start6": "parcel \"Video 6/index.html\"",
+    "start7": "parcel \"Video 7/index.html\"",
 
     "test": "jest"
   },
