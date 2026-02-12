@@ -3,6 +3,13 @@ import ReactDOM from "react-dom/client"
 import Header from "./components/Header";  
 import Body from "./components/Body";
 
+import { createBrowserRouter, RouterProvider } from "react-router-dom"; 
+//* createBrowserRouter tells When the URL looks like this, show that component.
+//* RouterProvider provides the routing configuration that we have create to our app.
+
+import About from "./components/About";
+import Contact from "./components/Contact";
+
 
 
 const AppLayout= () => {
@@ -10,12 +17,28 @@ const AppLayout= () => {
     <div className="app">
       <Header/>
       <Body />
-
+ 
     </div>
   )
 }
 
+const appRouter=createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+  },
+  {
+    path: "/about", 
+    element: <About />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
+  }
+])
+
 
 const root=ReactDOM.createRoot(document.getElementById("root"))
 
-root.render(<AppLayout/>)
+//root.render(<AppLayout/>)
+root.render(< RouterProvider router={appRouter} />)
