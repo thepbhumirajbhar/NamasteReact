@@ -27,7 +27,6 @@
     "start5": "parcel \"Video 5/index.html\"",
     "start6": "parcel \"Video 6/index.html\"",
     "start7": "parcel \"Video 7/index.html\"",
-
     "test": "jest"
   },
   "devDependencies": {
@@ -35,6 +34,7 @@
   },
   "dependencies": {
     "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "react-dom": "^19.2.4",
+    "react-router-dom": "^6.28.0"
   }
 }
