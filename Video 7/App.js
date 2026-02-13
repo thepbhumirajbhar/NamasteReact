@@ -3,9 +3,15 @@ import ReactDOM from "react-dom/client"
 import Header from "./components/Header";  
 import Body from "./components/Body";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom"; 
+import { createBrowserRouter, RouterProvider, Outlet} from "react-router-dom"; 
+
 //* createBrowserRouter tells When the URL looks like this, show that component.
 //* RouterProvider provides the routing configuration that we have create to our app.
+/* 
+! Outlet is the component given to us, it fills itself according to the path.
+! GOAL= to keep the header intact in about, contact page.
+*/
+
 
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -17,7 +23,7 @@ const AppLayout= () => {
   return (
     <div className="app">
       <Header/>
-      <Body />
+      <Outlet />
  
     </div>
   )
@@ -27,16 +33,22 @@ const appRouter=createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
-    errorElement: < Error />
-  },
-  {
+    errorElement: < Error />,
+    children: [
+    {path:"/",
+     element:<Body />
+    },
+    {
     path: "/about", 
     element: <About />,
-  },
-  {
+    },
+    {
     path: "/contact",
     element: <Contact />,
-  }
+    }
+  ]
+  },
+  
 ])
 
 
