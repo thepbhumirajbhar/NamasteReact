@@ -41,3 +41,16 @@ two types of import/export
 1. as soon as page LOADS --> API call --> RENDER it on ui.
 2. as soon as page LOADS --> RENDER the ui --> API call --> RE-RENDER the data (PREFFERED cz it gives a better UX)
 
+
+# two Types of ROUTING in web apps
+1. client side routing: JavaScript intercepts navigation to dynamically update the URL and render new components without a full page reload.
+
+2. server side routing: When a user clicks a link, the browser sends a completely new request to the server for that specific URL. Every link click fetches a brand-new HTML page from the server, resulting in a full page reload.
+
+
+# React apps are SINGLE PAGE APPLICATIONS(SPA)
+An SPA is a website that never does a full page refresh. It just dynamically rewrites the current page with new data as you click around, making the website feel as fast and smooth as a native app on your phone.
+It Works On Client Side Routing.
+
+
+
