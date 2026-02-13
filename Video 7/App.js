@@ -47,13 +47,14 @@ const appRouter=createBrowserRouter([
     element: <Contact />,
     },
     {
-    path: "/restaurant/:resId",
+    path: "/restaurant/:resId",              
     element: <RestaurantMenu />,
     }
   ]
   },
   
 ])
+ { /* /: makes the path dynamic*/ }
 
 
 const root=ReactDOM.createRoot(document.getElementById("root"))
