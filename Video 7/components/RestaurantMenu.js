@@ -4,9 +4,9 @@ const RestaurantMenu=() => {
       <h1>Name of the Restaurant</h1>
       <h3>Menu</h3>
       <ul>
-        <l1>Biryaani</l1>
-        <l1>Burger</l1>
-        <l1>Butter Chicken</l1>
+        <li>Biryaani</li>
+        <li>Burger</li>
+        <li>Butter Chicken</li>
       </ul>
     </div>
   )
