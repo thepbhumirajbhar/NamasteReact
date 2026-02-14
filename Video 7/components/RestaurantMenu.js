@@ -1,7 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
+//! GOAL: to load the fetched data to the UI => State Variable used.
 const RestaurantMenu=() => {
-  
+  const[resInfo, setResInfo] = useState(null)
+
+  //* shimmer UI when no data 
+  if (resInfo===null) return <Shimmer />
+
+
+
+
   useEffect(()=>{
     fetchMenu()
   },[]);
