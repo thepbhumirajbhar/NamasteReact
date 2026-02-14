@@ -4,10 +4,7 @@ import Shimmer from "./Shimmer";
 //! GOAL: to load the fetched data to the UI => State Variable used.
 const RestaurantMenu=() => {
   const[resInfo, setResInfo] = useState(null)
-
-  //* shimmer UI when no data 
-   if (resInfo===null) return <Shimmer />
-
+   
 
   useEffect(()=>{
     fetchMenu()
@@ -24,9 +21,11 @@ const RestaurantMenu=() => {
   };
 
 
-  return (
+  console.log("My Restaurant Data:", resInfo);
+  return resInfo===null ? <Shimmer /> 
+  :(
     <div className="menu ">
-      <h1>Name of the Restaurant</h1>
+      <h1>{resInfo?.cards[2]?.card?.card?.info?.name}</h1>
       <h3>Menu</h3>
       <ul>
         <li>Biryaani</li>
