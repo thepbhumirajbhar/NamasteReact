@@ -5,9 +5,9 @@ const styling= {
   backgroundColor:"rgb(243 217 217)"
 }
 
-const RestaurantCard= (props) =>{                             {/* (or) const RestaurantCard = ({resName,cuisine}) */}
+const RestaurantCard= (props) =>{                {/* (or) const RestaurantCard = ({resName,cuisine}) */}
 const {resData} =  props
-const{name, cuisines,ncloudinaryImageId, costForTwo,avgRating, sla:{deliveryTime}}=resData?.info
+const{name, cuisines,cloudinaryImageId, costForTwo,avgRating, sla:{deliveryTime}}=resData?.info
 
 return(
     <div className="res-card" style={styling}>
