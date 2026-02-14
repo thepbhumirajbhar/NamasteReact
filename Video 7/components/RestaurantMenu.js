@@ -6,9 +6,7 @@ const RestaurantMenu=() => {
   const[resInfo, setResInfo] = useState(null)
 
   //* shimmer UI when no data 
-  if (resInfo===null) return <Shimmer />
-
-
+   if (resInfo===null) return <Shimmer />
 
 
   useEffect(()=>{
@@ -21,6 +19,8 @@ const RestaurantMenu=() => {
 
     const json = await data.json();
     console.log(json)
+
+    setResInfo(json.data)
   };
 
 
