@@ -1,41 +1,61 @@
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 
+import { useParams } from "react-router-dom";
+import { MENU_API } from "../utils/constants";
+
 //! GOAL: to load the fetched data to the UI => State Variable used.
 const RestaurantMenu=() => {
   const[resInfo, setResInfo] = useState(null)
-   
+
+  const {resId} = useParams();
+  
 
   useEffect(()=>{
     fetchMenu()
   },[]);
 
   const fetchMenu = async ()=>{
-    const data = await fetch(
-        "https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId=766502");
+    const data = await fetch(MENU_API+ resId);
+    
 
     const json = await data.json();
-    console.log(json)
 
+    console.log(json)
     setResInfo(json.data)
+    console.log("API URL =>", MENU_API + resId);
   };
 
   if (resInfo===null) {
     return <Shimmer />};
 
-  const {name,cuisines,costForTwoMessage} = resInfo?.cards[2]?.card?.card?.info;
+  const restaurantInfo= resInfo?.cards
+                        ?.map((c)=>c?.card?.card?.info)
+                        ?.find((info) => info?.name);
 
-  const {itemCards}= resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.categories[0]
-  console.log(itemCards)
+  const {name,cuisines,costForTwoMessage} = restaurantInfo || {}
+
+  const regularCards= resInfo?.cards
+                     ?.find((c)=> c?.groupedCard)
+                     ?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+
+  const menuItems= regularCards
+                   ?.filter((c)=> c?.card?.card?.itemCards)   
+                   ?.flatMap((c) => c.card.card.itemCards); 
+  
+
+  
+  console.log(menuItems)
 
   return (
     <div className="menu ">
       <h1>{name}</h1>
-      <p> {cuisines.join(" ")}, {costForTwoMessage}</p>
+      <p> {cuisines?.join(" ")}, {costForTwoMessage}</p>
+  
       <ul>
-        {itemCards.map(item => 
-        <li key={item.card.info.id}>
-          {item.card.info.name} - ₹{item.card.info.price}
+        {menuItems?.map((item, index) =>
+        <li key={index}>
+          {item.card.info.name} - ₹{(item.card.info.price|| item.card.info.defaultPrice)/100}
           </li>)}
       </ul>
     </div>
