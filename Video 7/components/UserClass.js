@@ -8,35 +8,42 @@ class UserClass extends React.Component{
 
     //way to create state variables in class based component(no hooks are called)
     this.state={
-      count:0,
-      // count2: 1,
+      userInfo: {
+        name: "Dummy",
+        location: "Default",
+        avatar_url: "none",
+      },
     };
+  }
+
+  //API CALL
+  async componentDidMount() {
+    const data = await fetch ("https://api.github.com/users/thepbhumirajbhar")
+    const json = await data.json()
+
+    this.setState({
+      userInfo: json,
+    })
+  }
+
+  componentDidUpdate(){
+    console.log("component did update")
   }
 
 
   render(){
-    const{name, location} =this.props
-
+    
+    const {name, location,avatar_url} = this.state.userInfo;
 
     return (
       <div className="user-card">
+
+        <img src={avatar_url} />
+
         <h2>Name: {name}</h2>
         <h3>Location: {location}</h3>
         <h3>Contact info: @bhumirajbhar</h3>
-        <h2>Count:{this.state.count }</h2>
-
-
-        <button onClick={()=>{
-           //NEVER UPDATE STATE VARIABLES DIRECTLY
-           this.setState({
-            count: this.state.count + 1,
-           })
-        }}>
-          Count Increase
-        </button>
-
-
-        {/* <h2>Count-2:{this.state.count2 }</h2> */}
+        
       </div>
       
 
