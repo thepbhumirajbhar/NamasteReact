@@ -20,3 +20,22 @@ const About= () =>{
 
 
 export default About;
+
+/*
+* React tries to batch up the task because manipulating DOM is really very expensive
+
+- Parent Constrcutor
+- Parent render
+      - First Constructor
+      - First Render
+
+      - Second Constuctor
+      - second Render
+
+    <DOM UPDATED- IN A SINGLE BATCH>
+    - Child 1 componentdidmount
+    - Child 2 componentdidmount
+
+- Parent componentdidmount
+
+*/
