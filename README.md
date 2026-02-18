@@ -52,5 +52,9 @@ two types of import/export
 An SPA is a website that never does a full page refresh. It just dynamically rewrites the current page with new data as you click around, making the website feel as fast and smooth as a native app on your phone.
 It Works On Client Side Routing.
 
+# CLASS-BASED COMPONENT
+- parent component loaded/rendered on webpage
+- component spotted in the code --> class component loads
+- new instance of component is created --> "constructor" is called --> "render" is called
 
 
