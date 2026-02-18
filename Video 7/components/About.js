@@ -22,7 +22,11 @@ const About= () =>{
 export default About;
 
 /*
-* React tries to batch up the task because manipulating DOM is really very expensive
+* When the component is mounted(Mounting Phase), its mounted in 2 phases:
+! 1. Render phase: Constructor call + Render call
+! 2. Commit phase: DOM update + ComponentDidMount call
+
+* React tries to batch up these 2 phases(makes react FAST) because manipulating DOM is really very expensive
 
 - Parent Constrcutor
 - Parent render
@@ -33,9 +37,11 @@ export default About;
       - second Render
 
     <DOM UPDATED- IN A SINGLE BATCH>
-    - Child 1 componentdidmount
-    - Child 2 componentdidmount
+    - Child 1 ComponentDidMount
+    - Child 2 ComponentDidMount
 
 - Parent componentdidmount
 
 */
+
+//! Use case of ComponentDidMount: to call api 
