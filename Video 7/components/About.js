@@ -9,7 +9,11 @@ const About= () =>{
       <h2>Get to know about our company</h2>
       <User name={"Bhumi (Functional)"}/>
 
-      <UserClass name={"Bhumi (Class)"}/>
+      <UserClass name={"Bhumi (Class)"}         
+                 location={"Delhi (Class)"}/>
+
+      <UserClass name={"Kyu Btau"}
+                 location={"yahi kahi pass m"}/>
     </div>
   )
 }
