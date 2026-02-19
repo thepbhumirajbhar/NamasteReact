@@ -1,10 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
-const User= (props) =>{
-
+const User = (props) =>{
   const[count,setCount] = useState(0)
+
   // const[count2,setCount2] = useState(1)
+
+  useEffect(()=>{
+    //API call
+    const timer= setInterval(() =>{
+      console.log("until yo put a return statement i will keep running inthe bg")
+    },1000);
+
+    return() =>{
+      clearInterval(timer)
+      //* this return part is called when you switch the page
+      //* used to clear the mess once you leave the page.
+    }
+  },[])
+
+
 
   return (
     <div className="user-card">
