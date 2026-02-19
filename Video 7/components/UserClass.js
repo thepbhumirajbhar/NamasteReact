@@ -57,3 +57,29 @@ class UserClass extends React.Component{
 }
 
 export default UserClass;
+
+
+/*
+* 
+* -------------MOUNTING----------
+* 
+* Constructor(dummy data)
+* Render (dummy)
+*       <HTML: Dummy data is flashed on the screen thodi der>
+* ComponentDidMount()
+*        <API Call>
+*        <this.setState>  --> state varibale is updated 
+*
+*-------------UPDATING-----------
+* 
+* Render(with API data)
+*        <HTML (API data)>
+* ComponentDidUpdate()
+*
+*
+*------------UNMOUNTING----------
+*
+* ComponentWillUnmount()
+*
+*
+*/
