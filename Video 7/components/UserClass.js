@@ -30,10 +30,14 @@ class UserClass extends React.Component{
     console.log("component did update")
   }
 
+  componentWillUnmount(){
+    //it gets called when you move to another component(contactUs for eg)
+  }
+
 
   render(){
     
-    const {name, location,avatar_url} = this.state.userInfo;
+    const {name, location, avatar_url} = this.state.userInfo;
 
     return (
       <div className="user-card">
@@ -41,7 +45,8 @@ class UserClass extends React.Component{
         <img src={avatar_url} />
 
         <h2>Name: {name}</h2>
-        <h3>Location: {location}</h3>
+        <h3>Location: {location || "Delhi" }</h3>
+        
         <h3>Contact info: @bhumirajbhar</h3>
         
       </div>
