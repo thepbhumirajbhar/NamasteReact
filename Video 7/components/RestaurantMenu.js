@@ -1,8 +1,5 @@
-import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
-
 import { useParams } from "react-router-dom";
-
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 //! GOAL: to load the fetched data to the UI => State Variable used.
@@ -12,7 +9,6 @@ const RestaurantMenu=() => {
   
   const resInfo = useRestaurantMenu(resId)
   
-
   if (resInfo===null) {
     return <Shimmer />};
 
@@ -30,9 +26,7 @@ const RestaurantMenu=() => {
                    ?.filter((c)=> c?.card?.card?.itemCards)   
                    ?.flatMap((c) => c.card.card.itemCards); 
   
-
-  
-  console.log(menuItems)
+                   
 
   return (
     <div className="menu ">
