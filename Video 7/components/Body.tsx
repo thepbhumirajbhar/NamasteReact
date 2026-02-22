@@ -5,16 +5,34 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 
 
+type Restaurant ={
+  info: {
+    id: string;
+    name: string;
+    cuisines: string[];
+    avgRating: number;
+    cloudinaryImageId: string;
+    costForTwo: string;
+    sla:{
+      deliveryTime: number;
+    }
+  }
+}
+
+
+
+
+
 const Body= () =>{
 /*
 ! local STATE Variable: Super Powerful Varaible(using HOOKS)
 ! (more in README.md)
 */
 
-  const [listOfRestaurants, setListOfRestaurants] = useState([])
+  const [listOfRestaurants, setListOfRestaurants] = useState<Restaurant[]>([])
   const [searchText, setSearchText]= useState("");
 
-  const [filteredRes, setFilteredRes]= useState([]);
+  const [filteredRes, setFilteredRes]= useState<Restaurant[]>([]);
 
 
   useEffect(() =>{
@@ -25,23 +43,22 @@ const Body= () =>{
     const data= await fetch("https://corsproxy.io/?url=https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING");
 
     const json=await data.json();
-
     console.log(json)
     
     setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+
     //this is done so that main list stays intact. 
     setFilteredRes(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   }
 
   
   // //* CONDITIONAL RENDERING...
-  // if(listOfRestaurants.length===0){
-  //   return <Shimmer />
-  // }
+  if(listOfRestaurants.length===0){
+    return <Shimmer />
+  }
 
 
-  return listOfRestaurants.length===0 ? <Shimmer /> 
-  :(
+  return(
       <div className="body">
         <div className="filter">
           <div className="search"> 
