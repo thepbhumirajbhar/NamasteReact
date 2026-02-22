@@ -5,7 +5,25 @@ const styling= {
   backgroundColor:"rgb(243 217 217)"
 }
 
-const RestaurantCard= (props) =>{                {/* (or) const RestaurantCard = ({resName,cuisine}) */}
+type RestaurantCardProps={
+    resData:{
+      info:{
+        id: string;
+        name: string;
+        cuisines: string[];
+        avgRating: number;
+        cloudinaryImageId: string;
+        costForTwo: string;
+        sla:{
+          deliveryTime: number;
+        }
+      }
+    }
+}
+
+
+
+const RestaurantCard= (props: RestaurantCardProps) =>{                {/* (or) const RestaurantCard = ({resName,cuisine}) */}
 const {resData} =  props
 const{name, cuisines,cloudinaryImageId, costForTwo,avgRating, sla:{deliveryTime}}=resData?.info
 
