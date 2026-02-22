@@ -1,9 +1,24 @@
 import React from "react"
 
 
-class UserClass extends React.Component{
+type Props={
+    name: string;
+    location: string;
+}
 
-  constructor(props){
+type State={
+    userInfo:{
+      name: string;
+      location: string;
+      avatar_url: string;
+    } | null 
+}
+
+
+
+class UserClass extends React.Component<Props, State>{
+
+  constructor(props: Props){
     super(props)
 
     //way to create state variables in class based component(no hooks are called)
@@ -36,8 +51,12 @@ class UserClass extends React.Component{
 
 
   render(){
-    
-    const {name, location, avatar_url} = this.state.userInfo;
+    if (this.state.userInfo===null){
+      return <h2>Loading User Data...</h2>
+    }
+
+
+    const{name, location, avatar_url} = this.state.userInfo;
 
     return (
       <div className="user-card">

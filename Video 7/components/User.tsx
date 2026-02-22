@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 
+type UserProps={
+  name: string;
+}
 
-const User = (props) =>{
-  const[count,setCount] = useState(0)
+
+
+const User = (props: UserProps) =>{
+  const[count,setCount] = useState<number>(0)
 
   // const[count2,setCount2] = useState(1)
 
@@ -38,4 +43,4 @@ const User = (props) =>{
   )
 }
 
-export default User;
+export default User; 
