@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 type Restaurant ={
@@ -52,6 +53,17 @@ const Body= () =>{
   }
 
   
+
+  const onlineStatus = useOnlineStatus();
+  if(onlineStatus===false){
+    return(
+      <h2>Looks like you are not connected to the internet</h2>
+    )
+  }
+
+
+
+
   // //* CONDITIONAL RENDERING...
   if(listOfRestaurants.length===0){
     return <Shimmer />
