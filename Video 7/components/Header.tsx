@@ -5,11 +5,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 //! Link(Component) is similar to href but better: it doesnot load the entire page ==> better UX
 
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () =>{
 
   const [btnNameReact, setBtnNameReact]=useState("LOG IN")
   
+  const onlineStatus= useOnlineStatus();
 
   return(
     <div className="header">
@@ -21,6 +23,9 @@ const Header = () =>{
 
       <div className="nav-items">
         <ul>
+          <li>
+             Online Status: {onlineStatus ? "🟢" : "🔴"}
+          </li>
           <li>
             <Link to="/"> Home </Link> 
           </li>
