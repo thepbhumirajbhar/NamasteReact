@@ -58,3 +58,5 @@ It Works On Client Side Routing.
 - new instance of component is created --> "constructor" is called --> "render" is called
 
 
+# chunking/ code splitting/ dynamic bundling/ lazy loading/ on demand loading/ dynamic import 
+break down your app into smaller logical chunks so that browser loading doesnot take that time. 
