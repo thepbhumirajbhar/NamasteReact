@@ -28,16 +28,16 @@ const {resData} =  props
 const{name, cuisines,cloudinaryImageId, costForTwo,avgRating, sla:{deliveryTime}}=resData?.info
 
 return(
-    <div className="res-card" style={styling}>
+    <div className="m-3 p-4 w-[250px] h-full shadow-md shadow-gray-700 rounded-md hover:bg-green-900" style={styling}>
       <img 
-      className="res-logo"
+      className="rounded-md"
       alt="res-logo" 
       src={ CDN_URL + resData.info.cloudinaryImageId }/>
-      <h3>{name}</h3>                                     {/* (or) <h3> {res.Name} </h3> */}
-      <h5>{cuisines.join(", ")}</h5>                                 
-      <h5>{avgRating}</h5>
-      <h5>{costForTwo }</h5>
-      <h5>{deliveryTime} minutes </h5>
+      <h3 className="font-bold underline text-lg text-green-950 py-3">{name}</h3>                                     {/* (or) <h3> {res.Name} </h3> */}
+      <h5 className="text-amber-950 font-medium">{cuisines.join(", ")}</h5>                                 
+      <h5 className="text-amber-950 font-medium">{avgRating}</h5>
+      <h5 className="text-amber-950 font-medium">{costForTwo }</h5>
+      <h5 className="text-amber-950 font-medium">{deliveryTime} minutes </h5>
     </div>
   )
 }

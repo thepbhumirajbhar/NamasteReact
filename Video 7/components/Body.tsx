@@ -72,17 +72,19 @@ const Body= () =>{
 
   return(
       <div className="body">
-        <div className="filter">
-          <div className="search"> 
+        <div className="filter flex items-center gap-4 my-3">
+          <div className="search m-3 flex gap-2"> 
             <input 
               type="text" 
-              className="search-box" 
+              className="border-2 border-green-700 border-solid" 
               value={searchText}
               onChange={(e) => {
                 setSearchText(e.target.value)
               }}/>
+
+
             <button 
-              className="search-btn"
+              className="px-4 h-7 bg-green-400 rounded-md"
               onClick={() => {
                 //filter the restaurant cards and update the UI
                 // ! bind whatever the user inputs to a local state variable using useState and putting that in the value attribute of input.
@@ -100,7 +102,7 @@ const Body= () =>{
               </button>
           </div>
 
-
+         <div className="px-4 h-7 bg-green-400 rounded-md">
           <button className="filter-btn" 
             onClick={() => {
               //! filter logic 
@@ -109,11 +111,13 @@ const Body= () =>{
                 setFilteredRes(filteredList)}}>
             Top Rated Restaurants
           </button>
+         </div>
+          
         </div>
 
          
 
-        <div className="res-container">
+        <div className="flex flex-wrap justify-start gap-4">
            { filteredRes.map((restaurant) =>(
               <Link 
               to={"/restaurant/"+ restaurant.info.id}
