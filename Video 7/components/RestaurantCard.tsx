@@ -1,4 +1,4 @@
-import { CDN_URL } from "../utils/constants"
+import { CDN_URL } from "../utils/constants";
 
 
 const styling= {
@@ -28,7 +28,7 @@ const {resData} =  props
 const{name, cuisines,cloudinaryImageId, costForTwo,avgRating, sla:{deliveryTime}}=resData?.info
 
 return(
-    <div className="m-3 p-4 w-[250px] h-full shadow-md shadow-gray-700 rounded-md hover:bg-green-900" style={styling}>
+    <div className="m-3 p-4 w-[250px] h-full bg-green-100 shadow-md shadow-gray-700 rounded-md border-2 border-green-900 hover:bg-gray-300">
       <img 
       className="rounded-md"
       alt="res-logo" 

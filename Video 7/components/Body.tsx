@@ -84,7 +84,7 @@ const Body= () =>{
 
 
             <button 
-              className="px-4 h-7 bg-green-400 rounded-md"
+              className="px-4 h-7 bg-green-100 border-2 border-green-700 rounded-md"
               onClick={() => {
                 //filter the restaurant cards and update the UI
                 // ! bind whatever the user inputs to a local state variable using useState and putting that in the value attribute of input.
@@ -102,7 +102,7 @@ const Body= () =>{
               </button>
           </div>
 
-         <div className="px-4 h-7 bg-green-400 rounded-md">
+         <div className="px-4 h-7 bg-green-100 border-2 border-green-900 rounded-md">
           <button className="filter-btn" 
             onClick={() => {
               //! filter logic 
