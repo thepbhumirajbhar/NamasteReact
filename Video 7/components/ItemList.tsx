@@ -33,6 +33,12 @@ const ItemList = ({items}:ItemType) =>{
                   src={CDN_URL + item.card.info.imageId}
                   alt={item.card.info.name}
                   className="w-full shadow-md shadow-black h-24 rounded-md"/>)}
+                  <div className="absolute ">
+                    <button className="m-auto p-1 font-bold text-sm bg-green-950 text-neutral-50 flex rounded-md">
+                       Add +
+                    </button>
+                  </div>
+                
         </div>
      </div>
         
