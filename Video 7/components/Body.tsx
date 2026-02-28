@@ -5,6 +5,8 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
+import { withPromotedLabel } from "./RestaurantCard";
+
 
 type Restaurant ={
   info: {
@@ -17,6 +19,7 @@ type Restaurant ={
     sla:{
       deliveryTime: number;
     }
+    promoted: boolean;
   }
 }
 
@@ -35,6 +38,8 @@ const Body= () =>{
 
   const [filteredRes, setFilteredRes]= useState<Restaurant[]>([]);
 
+  const PromotedRestaurantCard = withPromotedLabel(RestaurantCard); 
+
 
   useEffect(() =>{
        fetchData();
@@ -51,7 +56,7 @@ const Body= () =>{
     //this is done so that main list stays intact. 
     setFilteredRes(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   }
-
+  console.log(listOfRestaurants)
   
 
   const onlineStatus = useOnlineStatus();
@@ -71,7 +76,7 @@ const Body= () =>{
 
 
   return(
-      <div className="body">
+      <div className="body bg-pink-50">
         <div className="filter flex items-center gap-4 my-3">
           <div className="search m-3 flex gap-2"> 
             <input 
@@ -122,7 +127,10 @@ const Body= () =>{
               <Link 
               to={"/restaurant/"+ restaurant.info.id}
               key={restaurant.info.id}> 
-                <RestaurantCard  resData={restaurant}/>
+              {
+                restaurant?.info?.promoted ? (<PromotedRestaurantCard resData={restaurant}/> )
+                : (<RestaurantCard  resData={restaurant}/>)
+              }  
               </Link>
             ))
            }
