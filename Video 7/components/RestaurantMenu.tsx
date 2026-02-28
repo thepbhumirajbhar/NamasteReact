@@ -31,7 +31,15 @@ const RestaurantMenu=() => {
   //console.log("2. Menu Items List: ", menuItems);
 
   console.log("3. Regular cards: ", regularCards)
+
+
                    
+  //Adding categories in the menu page
+  const categories = regularCards
+                    .filter((c:any)=> c?.card?.card?.["@type"]===
+                    "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+  
+  console.log("Categories: ", categories)
   
 
   return (
