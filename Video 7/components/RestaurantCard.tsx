@@ -38,10 +38,12 @@ const{name,
 
 return(
     <div className="m-3 p-4 w-[250px] h-full bg-green-100 shadow-md shadow-gray-700 rounded-md border-2 border-green-900 hover:bg-gray-300">
+
       <img 
       className="rounded-md h-56 w-full"
       alt="res-logo" 
       src={ CDN_URL + resData.info.cloudinaryImageId }/>
+
       <h3 className="font-bold underline text-lg text-green-950 py-3">{name}</h3>                                     {/* (or) <h3> {res.Name} </h3> */}
       <h5 className="text-amber-950 font-medium">{cuisines.join(", ")}</h5>                                 
       <h5 className="text-amber-950 font-medium">{avgRating}</h5>

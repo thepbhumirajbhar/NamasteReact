@@ -39,7 +39,7 @@ const Body= () =>{
   const [filteredRes, setFilteredRes]= useState<Restaurant[]>([]);
 
   const PromotedRestaurantCard = withPromotedLabel(RestaurantCard); 
-
+  
 
   useEffect(() =>{
        fetchData();
@@ -56,7 +56,7 @@ const Body= () =>{
     //this is done so that main list stays intact. 
     setFilteredRes(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   }
-  console.log(listOfRestaurants)
+  //console.log(listOfRestaurants)
   
 
   const onlineStatus = useOnlineStatus();
