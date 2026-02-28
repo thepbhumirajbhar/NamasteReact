@@ -1,6 +1,7 @@
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
 
 //! GOAL: to load the fetched data to the UI => State Variable used.
 const RestaurantMenu=() => {
@@ -30,7 +31,7 @@ const RestaurantMenu=() => {
                    ?.flatMap((c:any) => c.card.card.itemCards); 
   //console.log("2. Menu Items List: ", menuItems);
 
-  console.log("3. Regular cards: ", regularCards)
+  //console.log("3. Regular cards: ", regularCards)
 
 
                    
@@ -39,22 +40,25 @@ const RestaurantMenu=() => {
                     .filter((c:any)=> c?.card?.card?.["@type"]===
                     "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
   
-  console.log("Categories: ", categories)
+  //console.log("Categories: ", categories)
   
 
   return (
-    <div className="menu ">
-      <h1 className="font-bold">{name}</h1>
-      <p> 
+    <div className="text-center">
+      <h1 className="font-bold my-7 text-2xl">{name}</h1>
+      <p className="font-bold"> 
         {"Cuisines: " + cuisines?.join(", ")}, {costForTwo/100 + " for Two"}
       </p>
+    
+    {/* Categories Accordian */}
+    {categories.map((category:any)=>
+      <RestaurantCategory 
+        key={category?.card?.card?.categoryID}
+        data= {category?.card?.card}/>
+      )}
+
   
-      <ul>
-        {menuItems?.map((item:any, index:number) =>
-        <li key={index}>
-          {item.card.info.name} - ₹{((item.card.info.price)|| item.card.info.defaultPrice)/100}
-          </li>)}
-      </ul>
+
     </div>
   )
 }
