@@ -73,3 +73,4 @@ break down your app into smaller logical chunks so that browser loading doesnot 
 
 # HIGHER ORDER COMPONENT
 - takes a component (enhances it) & returns the component.
+- useCase: if I ever need to add a 'Promoted' label to a different component—like a GroceryCard—I can just reuse the exact same HOC.
