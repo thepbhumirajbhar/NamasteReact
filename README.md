@@ -69,3 +69,7 @@ break down your app into smaller logical chunks so that browser loading doesnot 
 
 -> The <Suspense> component works hand-in-hand with React.lazy() to manage the loading state
 1. Displaying Loading Indicators: Suspense's fallback prop is used to show a loading message, spinner, or skeleton screen, preventing blank screens or broken UIs while a component loads.
+
+
+# HIGHER ORDER COMPONENT
+- takes a component (enhances it) & returns the component.
