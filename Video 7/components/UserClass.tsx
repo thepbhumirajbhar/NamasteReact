@@ -1,4 +1,5 @@
 import React from "react"
+import UserContext from "../utils/UserContext";
 
 
 type Props={
@@ -62,6 +63,14 @@ class UserClass extends React.Component<Props, State>{
       <div className="user-card">
 
         <img src={avatar_url} />
+        <div>
+          <UserContext.Consumer>
+            {/* Consumer ke andar humesha ek function likhna padta hai */}
+            {(data: any) =>(
+              <div> {data.loggedInUser} </div>
+              )}
+          </UserContext.Consumer>
+        </div>
 
         <h2>Name: {name}</h2>
         <h3>Location: {location || "Delhi" }</h3>
