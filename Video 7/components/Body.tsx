@@ -1,11 +1,12 @@
 import RestaurantCard from "./RestaurantCard";
-import { useEffect, useState } from "react"; 
+import { useEffect, useState, useContext} from "react"; 
 import Shimmer from "./Shimmer";
 
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 import { withPromotedLabel } from "./RestaurantCard";
+import UserContext from "../utils/UserContext";
 
 
 type Restaurant ={
@@ -67,7 +68,8 @@ const Body= () =>{
   }
 
 
-
+   //UserContext se setUserName yaha mangwa lia
+  const {loggedInUser, setUserName} = useContext(UserContext)
 
   // //* CONDITIONAL RENDERING...
   if(listOfRestaurants.length===0){
@@ -75,21 +77,21 @@ const Body= () =>{
   }
 
 
+
   return(
       <div className="body">
-        <div className="filter flex items-center gap-4 my-3">
+        <div className="filter flex  justify-center items-center gap-4 my-3">
           <div className="search m-3 flex gap-2"> 
             <input 
               type="text" 
-              className="border-2 border-green-700 border-solid" 
+              className="border-2 border-green-900 border-solid" 
               value={searchText}
               onChange={(e) => {
                 setSearchText(e.target.value)
               }}/>
 
-
             <button 
-              className="px-4 h-7 bg-green-100 border-2 border-green-700 rounded-md"
+              className="px-4 h-7 bg-green-100 border-2 border-green-900 rounded-md"
               onClick={() => {
                 //filter the restaurant cards and update the UI
                 // ! bind whatever the user inputs to a local state variable using useState and putting that in the value attribute of input.
@@ -107,6 +109,8 @@ const Body= () =>{
               </button>
           </div>
 
+
+
          <div className="px-4 h-7 bg-green-100 border-2 border-green-900 rounded-md">
           <button className="filter-btn" 
             onClick={() => {
@@ -116,6 +120,16 @@ const Body= () =>{
                 setFilteredRes(filteredList)}}>
             Top Rated Restaurants
           </button>
+         </div>
+
+
+        {/* Goal: whatever is inputted here gets updated to the UserContext.LoggedInUser */}
+         <div>
+          <label className="text-sm">UserName: </label>
+          <input
+              className="px-4 h-7 border-2 border-green-900"
+              value={loggedInUser}
+              onChange={(e)=> setUserName(e.target.value)}/>
          </div>
           
         </div>
