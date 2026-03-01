@@ -76,7 +76,7 @@ const Body= () =>{
 
 
   return(
-      <div className="body bg-pink-50">
+      <div className="body">
         <div className="filter flex items-center gap-4 my-3">
           <div className="search m-3 flex gap-2"> 
             <input 

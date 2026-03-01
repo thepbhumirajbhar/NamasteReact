@@ -67,7 +67,7 @@ class UserClass extends React.Component<Props, State>{
           <UserContext.Consumer>
             {/* Consumer ke andar humesha ek function likhna padta hai */}
             {(data: any) =>(
-              <div> {data.loggedInUser} </div>
+              <div className="font-bold"> {data.loggedInUser} </div>
               )}
           </UserContext.Consumer>
         </div>
