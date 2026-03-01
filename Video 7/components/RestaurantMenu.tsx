@@ -2,12 +2,15 @@ import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 
 //! GOAL: to load the fetched data to the UI => State Variable used.
 const RestaurantMenu=() => {
 
   const {resId} = useParams();
   const resInfo = useRestaurantMenu(resId)
+
+  const [showIndex, setShowIndex]= useState <number|null> (null);
   
   //console.log("🚨🚨 MENU PAGE KA DATA YAHAN HAI: ", resInfo);
 
@@ -52,14 +55,17 @@ const RestaurantMenu=() => {
     
     {/* Categories Accordian */}
     {categories.map((category:any, index: number)=>
+
+    //controlled component
       <RestaurantCategory 
         key={category?.card?.card?.categoryId}
         data= {category?.card?.card}
-        showItems={index===1 ? true : false}/>
+        showItems={index===showIndex ? true : false}
+        setShowIndex={()=>setShowIndex(index)}/>
       )}
 
   
-
+ 
     </div>
   )
 }
