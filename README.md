@@ -76,5 +76,17 @@ break down your app into smaller logical chunks so that browser loading doesnot 
 - useCase: if I ever need to add a 'Promoted' label to a different component—like a GroceryCard—I can just reuse the exact same HOC.
 
 
-# CONTROLLED and UNCONTROLLED COMPONENT
+# CONTROLLED and UNCONTROLLED COMPONENT (lifting the state UP)
 -  (imp for interview) 
+
+
+# CONTEXT - an alternative to passing props
+- the Context API is a built-in React feature used for global state management. It allows you to share data across the entire component tree without having to pass props down manually at every level.
+- Common examples: 1. user authentication state
+                   2. UI themes (dark/light mode)
+                   3. language preferences.
+
+*.... IMPLEMENTATION.... *
+- first, we create it using 'createContext()'.
+- then we wrap our application with the Provider to pass the value.
+- finally, we access the data in any child component using the 'useContext()' hook.           
