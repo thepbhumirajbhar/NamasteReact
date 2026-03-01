@@ -51,10 +51,11 @@ const RestaurantMenu=() => {
       </p>
     
     {/* Categories Accordian */}
-    {categories.map((category:any)=>
+    {categories.map((category:any, index: number)=>
       <RestaurantCategory 
-        key={category?.card?.card?.categoryID}
-        data= {category?.card?.card}/>
+        key={category?.card?.card?.categoryId}
+        data= {category?.card?.card}
+        showItems={index===1 ? true : false}/>
       )}
 
   
