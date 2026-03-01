@@ -86,7 +86,7 @@ break down your app into smaller logical chunks so that browser loading doesnot 
                    2. UI themes (dark/light mode)
                    3. language preferences.
 
-*.... IMPLEMENTATION.... *
+*.... IMPLEMENTATION....(in functional components)*
 - first, we create it using 'createContext()'.
 - then we wrap our application with the Provider to pass the value.
 - finally, we access the data in any child component using the 'useContext()' hook.           
