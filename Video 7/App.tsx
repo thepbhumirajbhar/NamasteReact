@@ -44,6 +44,7 @@ const AppLayout= () => {
 
 
   return (
+    //basically changing userName from any where in the app by passing setUserName=>(binded state variable to the context )
     <UserContext.Provider value={{loggedInUser : userName, setUserName}}>
       <div className="app">
       <Header/>
