@@ -4,17 +4,18 @@ import ItemList from "./ItemList";
 type CategoryData={
   data: any;
   showItems: boolean;
+  setShowIndex:()=> void;
 }
 
 
-const RestaurantCategory= ({data, showItems}: CategoryData) =>{
+const RestaurantCategory= ({data, showItems, setShowIndex}: CategoryData) =>{
   //console.log("list of each category one by one", data)
 
   // passing the control to parent= RestaurantMenu component
   //const [showItems, setShowItems] = useState(false)
 
   const handleClick = ()=>{
-    
+    setShowIndex();
   }
 
 
@@ -30,7 +31,7 @@ const RestaurantCategory= ({data, showItems}: CategoryData) =>{
         </div>
       
       {/* ACCORDIAN BODY */}
-      {/* showitem when showitem is TRUE... */}
+      {/* show item when showitem is TRUE... */}
       { showItems && <ItemList items = {data.itemCards} />}
     </div>
   </div>  
