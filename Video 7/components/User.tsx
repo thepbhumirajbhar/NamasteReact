@@ -14,7 +14,7 @@ const User = (props: UserProps) =>{
   useEffect(()=>{
     //API call
     const timer= setInterval(() =>{
-      console.log("until yo put a return statement i will keep running inthe bg")
+      console.log("until yo put a return statement i will keep running in the bg evn if you leave the page")
     },1000);
 
     return() =>{
