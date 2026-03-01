@@ -3,20 +3,18 @@ import ItemList from "./ItemList";
 
 type CategoryData={
   data: any;
+  showItems: boolean;
 }
 
 
-const RestaurantCategory= ({data}: CategoryData) =>{
+const RestaurantCategory= ({data, showItems}: CategoryData) =>{
   //console.log("list of each category one by one", data)
 
-  const [showItems, setShowItems] = useState(false)
+  // passing the control to parent= RestaurantMenu component
+  //const [showItems, setShowItems] = useState(false)
 
   const handleClick = ()=>{
-    //write logic here to turn the showItems as TRUE on click(works only once)
-    //setShowItems(true)
-
-    //writing logic for toggle feature (works all tym)
-    setShowItems(!showItems)
+    
   }
 
 
