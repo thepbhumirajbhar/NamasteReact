@@ -1,5 +1,6 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ItemList from "./ItemList";
+import { clearCart } from "../utils/cartSlice";
 
 const Cart = () => {
 
@@ -8,6 +9,11 @@ const Cart = () => {
   const cartItems = useSelector((store:any)=> store.cart.items)
 
 
+  const dispatch = useDispatch();
+
+  const handleClearCart = () => {
+    dispatch(clearCart())
+  }
 
   return(
     <div className="p-2 text-center ">
@@ -16,7 +22,8 @@ const Cart = () => {
       {/* //* step2: using itemList UI n passing cartItems to it */}
       <div className="w-6/12 m-auto">
 
-        <button className="p-1 m-1 border-green-700 border-2 bg-slate-200 rounded-lg font-semibold hover:bg-gray-300">
+        <button className="p-1 m-1 border-green-700 border-2 bg-slate-200 rounded-lg font-semibold hover:bg-gray-300"
+                onClick={handleClearCart}>
           Clear Cart
         </button>
 
