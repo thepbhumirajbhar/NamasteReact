@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 
 
@@ -20,6 +21,10 @@ const Header = () =>{
 
   const data= useContext(UserContext);
   //console.log(data)
+
+  //Subscribing to Redux-Store(cart-> items) using Selector: to read the data from the slice and show no. of items next to the Cart
+  const cartItems = useSelector((store: any) => store.cart.items);
+  
 
   return(
     <div className= "flex justify-between bg-green-950 text-[#F5F5DC] font-bold shadow-gray-700 shadow-lg">
@@ -52,7 +57,7 @@ const Header = () =>{
           </li>
 
           <li className="p-4">
-            Cart
+            Cart ({cartItems.length})
           </li>
 
           <button 
