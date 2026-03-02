@@ -89,4 +89,37 @@ break down your app into smaller logical chunks so that browser loading doesnot 
 *.... IMPLEMENTATION....(in functional components)*
 - first, we create it using 'createContext()'.
 - then we wrap our application with the Provider to pass the value.
-- finally, we access the data in any child component using the 'useContext()' hook.           
+- finally, we access the data in any child component using the 'useContext()' hook.  
+
+
+
+
+# REDUX 
+- redux and react are 2 diff libraries..their combo is lit.
+- redux, primarily used for handling state of the variable
+- offers easy debugging
+
+REDUX offers 2 libraries: 1. react - redux
+                          2. reduc toolkit (RTk)
+
+
+Architecture of RTk
+(via Cart Page Working: item added-> shows num of items in the cart in the header)
+- redux store == big JS object(with a lot of data) i.e. kept at a global central place.
+- redux store consists of small-small portions (SLICEs)- they r the logical partitions.EX: cart, user, theme slices.
+
+*....Write data in the redux store/ slice....*
+- changes can not be made directly to the slice(cart).
+- add+ btn clicked --> 'dispatches an action' --> calls a 'function'(reducer fun) --> fun modifies/updates the slice(cart).
+
+*....Read data from the slice....*
+- 'selector' is used to read data from the slice.
+- selector give the data to the component. ('component is subscribed to the store using selector')
+
+* steps to follow
+- Install @reduxjs/toolkit & react-redux
+- Build our store
+- Connect store to out app
+- create cart slice
+- dispatch(action)
+- Selector
