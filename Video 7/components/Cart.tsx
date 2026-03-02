@@ -1,7 +1,22 @@
+import { useSelector } from "react-redux";
+import ItemList from "./ItemList";
+
 const Cart = () => {
+
+  //! GOAL: to show added items on the cart page
+  //* Step1: Subscribing to the store
+  const cartItems = useSelector((store:any)=> store.cart.items)
+
+
+
   return(
-    <div>
-      Cart
+    <div className="p-2 text-center ">
+      <h1 className="font-bold text-2xl m-2 text-green-900 shadow-md">Cart</h1>
+
+      {/* //* step2: using itemList UI n passing cartItems to it */}
+      <div className="w-6/12 m-auto">
+        <ItemList items={cartItems}/>
+      </div>
     </div>
   )
     
