@@ -24,6 +24,7 @@ const Header = () =>{
 
   //Subscribing to Redux-Store(cart-> items) using Selector: to read the data from the slice and show no. of items next to the Cart
   const cartItems = useSelector((store: any) => store.cart.items);
+  //console.log(cartItems): shows the items added in the object
   
 
   return(
