@@ -123,3 +123,22 @@ Architecture of RTk
 - create cart slice
 - dispatch(action)
 - Selector
+
+
+
+# DEVELOPER TESTING(types)
+*1. Manual Testing
+*2. Writing Test Cases: -(a) unit testing: testing 1 component/unit in isolation.
+                        -(b) integration testing: testing 2 or more units, how well they communicate w eachother.
+                        -(c) end to end testing (e2e testing): tests user flow in the browser.
+
+
+*.... Setting up testing in our app....*
+- install React Testing Library
+- installed jest
+- installed babel dependencies
+- congigure babel
+- configure Parcel config file to disbale default babel tranpilation (.parcelrc created).
+  (disbaling so that default config doesnot conflict with testing babel config)
+- jest configuartion (npm init jest@latest)
+- install jsdom library 
