@@ -23,6 +23,7 @@ import UserContext from "./utils/UserContext";
 //* Connecting redux to our react app is recat-redux job.
 import { Provider } from "react-redux"; 
 import appStore from "./utils/appstore";
+import Cart from "./components/Cart";
 
 
 // chunking grocery component
@@ -90,6 +91,10 @@ const appRouter=createBrowserRouter([
     {
     path: "/restaurant/:resId",              
     element: <RestaurantMenu />,
+    },
+    {
+      path:"/cart",
+      element:<Cart/>,
     }
   ]
   },
