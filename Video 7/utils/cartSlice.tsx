@@ -22,7 +22,24 @@ const cartSlice = createSlice({
     },
 
     clearCart:(state) => {
+
+      /*
+      ! console.log(state); -> shows a proxy object: unreadable 
+      ! to see whats in the 'state' do:
+      ! console.log(current(state));
+      */
+
+      /*
+      ! state=[] changes the variable locally but do not change the actual 'Original' state that is passed in the ClearCart as parameter. 
+      
+      ! hence mutating the state becomes necessary by state.items.length = 0;
+      ! or return new empty item{} by 
+      ! return {items:[]}
+      */
+
+
       state.items.length = 0;
+      // return {items: []}
     }
 
   }
@@ -33,3 +50,6 @@ const cartSlice = createSlice({
 // exporting actions and reducers. 
 export const {addItem, removeItem, clearCart} = cartSlice.actions;
 export default cartSlice.reducer;
+
+
+//* redux uses Immer(library) BTS: (read)
