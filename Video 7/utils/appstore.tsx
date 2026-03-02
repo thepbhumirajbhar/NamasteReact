@@ -1,4 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
+
+//! Since we did 'default' export in cartSlice file, that item can be received with any nickname; 
 import cartReducer from "./cartSlice";
 
 
