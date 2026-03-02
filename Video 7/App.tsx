@@ -16,8 +16,13 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
-//import Grocery from "./components/Grocery"
+
+//* import Grocery from "./components/Grocery"
 import UserContext from "./utils/UserContext";
+
+//* Connecting redux to our react app is recat-redux job.
+import { Provider } from "react-redux"; 
+import appStore from "./utils/appstore";
 
 
 // chunking grocery component
@@ -44,14 +49,17 @@ const AppLayout= () => {
 
 
   return (
-    //basically changing userName from any where in the app by passing setUserName=>(binded state variable to the context )
-    <UserContext.Provider value={{loggedInUser : userName, setUserName}}>
-      <div className="app">
-      <Header/>
-      <Outlet />
- 
-    </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+
+       {/* //basically changing userName from any where in the app by passing setUserName=>(binded state variable to the context ) */}
+       <UserContext.Provider value={{loggedInUser : userName, setUserName}}>
+
+          <div className="app">
+             <Header/>
+             <Outlet />
+          </div>
+        </UserContext.Provider>
+    </Provider>
     
   )
 }
