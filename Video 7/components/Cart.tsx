@@ -15,6 +15,11 @@ const Cart = () => {
 
       {/* //* step2: using itemList UI n passing cartItems to it */}
       <div className="w-6/12 m-auto">
+
+        <button className="p-1 m-1 border-green-700 border-2 bg-slate-200 rounded-lg font-semibold hover:bg-gray-300">
+          Clear Cart
+        </button>
+
         <ItemList items={cartItems}/>
       </div>
     </div>
