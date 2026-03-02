@@ -12,15 +12,16 @@ const cartSlice = createSlice({
     //* write reducer fun corresponding to 'each action'
 
     // takes 2 parameters: modifies the state based on action
+    //! action parameter unn reducer fun m jata h jaha fun ka bahar se info/data needed ho, ex: add data(konsa data?)
     addItem: (state, action) => {
       state.items.push(action.payload);
     },
 
-    removeItem: (state, action) =>{
+    removeItem: (state) =>{
       state.items.pop()
     },
 
-    clearCart:(state, action) => {
+    clearCart:(state) => {
       state.items.length = 0;
     }
 
