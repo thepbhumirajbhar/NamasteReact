@@ -20,7 +20,7 @@ describe("ContactUs Page test cases", () => {
     })
 
 
-    test("should load button inside contactUs component", () =>{
+    it("should load button inside contactUs component", () =>{
 
 
       render(<Contact/>)
@@ -37,7 +37,7 @@ describe("ContactUs Page test cases", () => {
     })
 
 
-    test("should load InputName inside contactUs component", () =>{
+    it("should load InputName inside contactUs component", () =>{
 
     
       render(<Contact/>)
