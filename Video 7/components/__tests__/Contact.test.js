@@ -19,7 +19,7 @@ test("should load contact us component", () =>{
 
 test("should load button inside contactUs component", () =>{
   
-  //! STEP1: render the component to the jsdom
+  
   render(<Contact/>)
 
 
@@ -31,4 +31,35 @@ test("should load button inside contactUs component", () =>{
 
   //Assertion 
   expect(btn).toBeInTheDocument();
+})
+
+
+test("should load InputName inside contactUs component", () =>{
+  
+ 
+  render(<Contact/>)
+
+
+  const inputName = screen.getByPlaceholderText("Name");
+  
+
+  //Assertion 
+  expect(inputName).toBeInTheDocument();
+})
+
+
+test("should load 2 input boxes inside contactUs component", () =>{
+  
+
+  render(<Contact/>)
+
+  
+  const inputBoxes = screen.getAllByRole('textbox');
+  
+  //querying: gives react element/ virtual DOM object
+  //console.log(inputBoxes)
+  
+
+  //Assertion 
+  expect(inputBoxes).toHaveLength(2);
 })
