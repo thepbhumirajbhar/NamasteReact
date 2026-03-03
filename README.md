@@ -137,8 +137,11 @@ Architecture of RTk
 - install React Testing Library
 - installed jest
 - installed babel dependencies
-- congigure babel
+- configure babel
 - configure Parcel config file to disbale default babel tranpilation (.parcelrc created).
   (disbaling so that default config doesnot conflict with testing babel config)
 - jest configuartion (npm init jest@latest)
 - install jsdom library 
+- install @babel/preset-react library to make jsx work in the testing
+- include @babel/preset-react inside my babel
+- install @testing-library/jest-dom
