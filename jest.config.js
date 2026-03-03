@@ -3,9 +3,9 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type {Config} from 'jest';
 
-const config: Config = {
+
+const config = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -198,4 +198,5 @@ const config: Config = {
   // watchman: true,
 };
 
-export default config;
+//export default config;
+module.exports = config;
