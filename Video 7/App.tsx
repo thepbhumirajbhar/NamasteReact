@@ -6,7 +6,9 @@ import Body from "./components/Body";
 import { createBrowserRouter, RouterProvider, Outlet} from "react-router-dom"; 
 
 //* createBrowserRouter tells When the URL looks like this, show that component.
-//* RouterProvider provides the routing configuration that we have create to our app.
+
+//* RouterProvider provides the routing configuration that we have created to our app. It connects your React app to the browser's web address (URL) so it knows exactly which page to show. It gives your whole app the power to use links and switch pages instantly without reloading the website.
+
 /* 
 ! Outlet is the component given to us, it fills itself according to the path.
 */
