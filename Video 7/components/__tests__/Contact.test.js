@@ -23,7 +23,10 @@ test("should load button inside contactUs component", () =>{
   render(<Contact/>)
 
 
-  const btn = screen.getByRole("button");
+  //const btn = screen.getByRole("button");
+
+  //Another way of doing above thing
+  const btn = screen.getByText("Submit")
   
 
   //Assertion 
