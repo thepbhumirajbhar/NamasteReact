@@ -3,63 +3,68 @@ import Contact from "../Contact"
 import "@testing-library/jest-dom";
 
 
-test("should load contact us component", () =>{
-  
-  //! STEP1: render the component to the jsdom
-  render(<Contact/>)
+//! grouping multiple test cases into a block: describe
+describe("ContactUs Page test cases", () => {
+
+    test("should load contact us component", () =>{
+
+      //! STEP1: render the component to the jsdom
+      render(<Contact/>)
+    
+    
+      const heading = screen.getByRole("heading");
+
+    
+      //Assertion 
+      expect(heading).toBeInTheDocument();
+    })
 
 
-  const heading = screen.getByRole("heading");
-  
-
-  //Assertion 
-  expect(heading).toBeInTheDocument();
-})
+    test("should load button inside contactUs component", () =>{
 
 
-test("should load button inside contactUs component", () =>{
-  
-  
-  render(<Contact/>)
+      render(<Contact/>)
+    
+    
+      //const btn = screen.getByRole("button");
+    
+      //Another way of doing above thing
+      const btn = screen.getByText("Submit")
+
+    
+      //Assertion 
+      expect(btn).toBeInTheDocument();
+    })
 
 
-  //const btn = screen.getByRole("button");
+    test("should load InputName inside contactUs component", () =>{
 
-  //Another way of doing above thing
-  const btn = screen.getByText("Submit")
-  
+    
+      render(<Contact/>)
+    
+    
+      const inputName = screen.getByPlaceholderText("Name");
 
-  //Assertion 
-  expect(btn).toBeInTheDocument();
-})
-
-
-test("should load InputName inside contactUs component", () =>{
-  
- 
-  render(<Contact/>)
+    
+      //Assertion 
+      expect(inputName).toBeInTheDocument();
+    })
 
 
-  const inputName = screen.getByPlaceholderText("Name");
-  
+    test("should load 2 input boxes inside contactUs component", () =>{
 
-  //Assertion 
-  expect(inputName).toBeInTheDocument();
-})
+    
+      render(<Contact/>)
+    
 
+      const inputBoxes = screen.getAllByRole('textbox');
+    
+      //querying: gives react element/ virtual DOM object
+      //console.log(inputBoxes)
 
-test("should load 2 input boxes inside contactUs component", () =>{
-  
+    
+      //Assertion 
+      expect(inputBoxes).toHaveLength(2);
+    })
 
-  render(<Contact/>)
-
-  
-  const inputBoxes = screen.getAllByRole('textbox');
-  
-  //querying: gives react element/ virtual DOM object
-  //console.log(inputBoxes)
-  
-
-  //Assertion 
-  expect(inputBoxes).toHaveLength(2);
 })
