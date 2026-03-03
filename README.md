@@ -145,3 +145,4 @@ Architecture of RTk
 - install @babel/preset-react library to make jsx work in the testing
 - include @babel/preset-react inside my babel
 - install @testing-library/jest-dom
+- install @babel/preset-typescript - so babel can understand your .ts and .tsx files.
