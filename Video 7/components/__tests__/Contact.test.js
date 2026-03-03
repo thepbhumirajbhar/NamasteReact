@@ -15,3 +15,17 @@ test("should load contact us component", () =>{
   //Assertion 
   expect(heading).toBeInTheDocument();
 })
+
+
+test("should load button inside contactUs component", () =>{
+  
+  //! STEP1: render the component to the jsdom
+  render(<Contact/>)
+
+
+  const btn = screen.getByRole("button");
+  
+
+  //Assertion 
+  expect(btn).toBeInTheDocument();
+})
