@@ -6,6 +6,14 @@ import "@testing-library/jest-dom";
 //! grouping multiple test cases into a block: describe
 describe("ContactUs Page test cases", () => {
 
+  beforeAll(()=>{
+    console.log("JEST gives it. this fun gets executed b4 all tests")
+  })
+
+  beforeEach(()=>{
+    console.log("it runs b4 each test")
+  })
+
     test("should load contact us component", () =>{
 
       //! STEP1: render the component to the jsdom
