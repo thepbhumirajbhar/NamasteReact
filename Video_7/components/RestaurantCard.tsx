@@ -38,7 +38,9 @@ const{name,
       sla:{deliveryTime}}=resData?.info
 
 return(
-    <div className="m-3 p-4 w-[250px] h-full bg-green-100 shadow-md shadow-gray-700 rounded-md border-2 border-green-900 hover:bg-gray-300">
+    <div 
+    data-testid="resCard"
+    className="m-3 p-4 w-[250px] h-full bg-green-100 shadow-md shadow-gray-700 rounded-md border-2 border-green-900 hover:bg-gray-300">
 
       <img 
       className="rounded-md h-56 w-full"

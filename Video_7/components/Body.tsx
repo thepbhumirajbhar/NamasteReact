@@ -84,6 +84,7 @@ const Body= () =>{
           <div className="search m-3 flex gap-2"> 
             <input 
               type="text" 
+              data-testid= "searchInput"
               className="border-2 border-green-900 border-solid" 
               value={searchText}
               onChange={(e) => {
