@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react";
 import Body from "../Body";
-
+import { act } from "react";
+import { BrowserRouter } from "react-router-dom";
 
 // 'fetch' usedin the body component is not given by JS but rather by browser, we are testing it on jsDom(browser like environment): jest doesnot understand fetch. ==> dummy fetch is made(exactly like how broswer gives)
 
@@ -21,6 +22,7 @@ import Body from "../Body";
 */
 
 
+import MOCK_DATA from ".././mocks/resList(API)data.json";
 
 
 global.fetch = jest.fn(() =>{
@@ -36,7 +38,14 @@ global.fetch = jest.fn(() =>{
 
 
 
-it("should render Body compponent with Search", ()=>{
+it("should render Body compponent with Search", async ()=>{
 
-  render(<Body/>)
+  //render(<Body/>)
+
+  // act is imported bcz there are state changes in the component
+  await act(async() => render (
+    <BrowserRouter>
+      <Body/>
+    </BrowserRouter>
+  ))
 })
