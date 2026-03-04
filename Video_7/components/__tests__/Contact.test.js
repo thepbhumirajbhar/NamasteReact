@@ -14,6 +14,16 @@ describe("ContactUs Page test cases", () => {
     console.log("it runs b4 each test")
   })
 
+  afterAll(()=>{
+    console.log("it runs after all test")
+  })
+
+  afterEach(()=>{
+    console.log("it runs after each test")
+  })
+
+
+
     test("should load contact us component", () =>{
 
       //! STEP1: render the component to the jsdom
