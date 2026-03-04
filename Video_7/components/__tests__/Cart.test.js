@@ -1,8 +1,17 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
+
+// act guarantees that all background tasks—like API calls, state updates, and useEffect hooks—are fully completed and rendered before your test proceeds.
 import { act } from "react";
+
 import RestaurantMenu from "../RestaurantMenu";
 import MOCK_DATA from "../mocks/mockResMenu.json";
+
+// for 'link to'
 import { BrowserRouter } from "react-router-dom";
+
+// Providing redux store for 'useSelector' and other redux commands.
+import { Provider } from "react-redux";
+import appStore from "../../utils/appstore";
 
 
 //resolving fetch
@@ -15,13 +24,19 @@ global.fetch = jest.fn(()=>{
 
 it("should load restaurantMenu component", async() =>{
     await act( async() => render (
-    <BrowserRouter>
-      <RestaurantMenu/>
-    </BrowserRouter>
+      <Provider store={appStore}>
+        <BrowserRouter>
+          <RestaurantMenu/>
+        </BrowserRouter>
+      </Provider>
+    
     ))
 
 
     //finding accordian heading
     const accordHead = screen.getByText("Pastries (7)");
+
+    // click on it to view the menu
+    fireEvent.click(accordHead)
 
 })
