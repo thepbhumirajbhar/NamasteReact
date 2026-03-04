@@ -26,3 +26,20 @@ it("should load Header component with a Login button", () =>{
   expect(loginBtn).toBeInTheDocument();
 
 })
+
+
+it("should load Header component with Cart item 0 button", () =>{
+
+  render(
+    <BrowserRouter>
+      <Provider store={appStore}>
+        (<Header/ >)
+      </Provider>
+    </BrowserRouter>
+  )
+
+  const cartItems = screen.getByText("Cart (0)")
+
+  expect(cartItems).toBeInTheDocument();
+
+})
