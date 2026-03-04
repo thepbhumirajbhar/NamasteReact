@@ -1,6 +1,8 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import Body from "../Body";
 import { act } from "react";
+
+// for 'link to'
 import { BrowserRouter } from "react-router-dom";
 
 // for toBeInTheDocument
@@ -65,4 +67,20 @@ it("should render Body compponent with Search", async ()=>{
 
 
   //expect(searchBtn).toBeInTheDocument();
+})
+
+
+it("should filter top rated restaurants", async () =>{
+
+  await act(()=> render(
+  <BrowserRouter>
+    <Body/>
+  </BrowserRouter>
+  ))
+
+
+  const cardsBeforeFilter = screen.getAllByTestId("resCard");
+
+  expect(cardsBeforeFilter).toHaveLength(8);
+
 })
