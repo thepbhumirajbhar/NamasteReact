@@ -1,7 +1,10 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Body from "../Body";
 import { act } from "react";
 import { BrowserRouter } from "react-router-dom";
+
+// for toBeInTheDocument
+import "@testing-library/jest-dom";
 
 // 'fetch' usedin the body component is not given by JS but rather by browser, we are testing it on jsDom(browser like environment): jest doesnot understand fetch. ==> dummy fetch is made(exactly like how broswer gives)
 
@@ -48,4 +51,8 @@ it("should render Body compponent with Search", async ()=>{
       <Body/>
     </BrowserRouter>
   ))
+
+  const serachBtn = screen.getByRole("button", {name: "Search"});
+
+  expect(serachBtn).toBeInTheDocument();
 })
