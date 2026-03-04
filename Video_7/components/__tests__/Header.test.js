@@ -1,7 +1,10 @@
 import { fireEvent, render, screen } from "@testing-library/react"
 import Header from "../Header"
+
+// Providing redux store for 'useSelector' and other redux commands. it understands react part: useState, etc.
 import { Provider } from "react-redux"
 import appStore from "../../utils/appstore"
+
 import { BrowserRouter } from "react-router-dom"
 
 // for toBeInTheDocument

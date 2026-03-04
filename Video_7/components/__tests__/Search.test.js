@@ -47,7 +47,7 @@ it("should render Body compponent with Search", async ()=>{
 
   //render(<Body/>)
 
-  // act is imported bcz there are state changes in the component
+  // act guarantees that all background tasks—like API calls, state updates, and useEffect hooks—are fully completed and rendered before your test proceeds.
   await act(async() => render (
     <BrowserRouter>
       <Body/>
