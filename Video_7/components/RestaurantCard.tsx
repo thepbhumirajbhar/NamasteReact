@@ -28,7 +28,7 @@ type RestaurantCardProps={
 const RestaurantCard = (props: RestaurantCardProps) =>{               
    {/* (or) const RestaurantCard = ({resName,cuisine}) */}
 const {resData} =  props
-console.log(resData)
+//console.log(resData)
 
 const{name, 
       cuisines,
