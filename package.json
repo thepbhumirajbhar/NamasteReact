@@ -27,7 +27,8 @@
     "start5": "parcel \"Video 5/index.html\"",
     "start6": "parcel \"Video 6/index.html\"",
     "start7": "parcel \"Video_7/index.html\"",
-    "test": "jest"
+    "test": "jest",
+    "watch-test": "jest --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
