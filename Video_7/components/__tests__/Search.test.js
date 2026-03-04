@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import Body from "../Body";
 import { act } from "react";
 import { BrowserRouter } from "react-router-dom";
@@ -52,7 +52,17 @@ it("should render Body compponent with Search", async ()=>{
     </BrowserRouter>
   ))
 
-  const serachBtn = screen.getByRole("button", {name: "Search"});
+  const searchBtn = screen.getByRole("button", {name: "Search"});
 
-  expect(serachBtn).toBeInTheDocument();
+  const SearchInput = screen.getByTestId("searchInput");
+  fireEvent.change(SearchInput, {target: {value: "Wok"}})
+  fireEvent.click(searchBtn);
+
+  // assertion: screen should load 1 card
+  const cards = screen.getAllByTestId('resCard');
+
+  expect(cards).toHaveLength(1);
+
+
+  //expect(searchBtn).toBeInTheDocument();
 })
