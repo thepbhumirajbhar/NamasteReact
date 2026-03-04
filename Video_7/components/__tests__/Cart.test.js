@@ -39,4 +39,9 @@ it("should load restaurantMenu component", async() =>{
     // click on it to view the menu
     fireEvent.click(accordHead)
 
+    //checking the num of items are in pastries accord.
+    const items = screen.getAllByTestId("foodItems")
+
+    expect(items).toHaveLength(7);
+
 })
